@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --with python2 --install-layout=deb,quilt
+
+override_dh_clean:
+	rm -rf ./build
+	rm -rf ./Alignak.egg-info
+	dh_clean
+
+override_dh_installdirs:
+	dh_installdirs
+
+override_dh_installinit:
+	dh_installinit --no-start --name=alignak
+
+override_dh_installdocs:
+
+make_dfsg:
+	rm test/modules

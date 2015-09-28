@@ -1,0 +1,9 @@
+#etc/init.d/*
+#etc/default/alignak
+usr/lib/python2.7/dist-packages/*.egg-info
+usr/lib/python2.7/dist-packages/alignak/*.py
+usr/lib/python2.7/dist-packages/alignak/http/*
+usr/lib/python2.7/dist-packages/alignak/daemons/*
+usr/lib/python2.7/dist-packages/alignak/misc/*
+usr/lib/python2.7/dist-packages/alignak/objects/*
+usr/bin/alignak*
