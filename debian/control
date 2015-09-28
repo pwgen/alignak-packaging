@@ -13,7 +13,7 @@ Homepage: https://alignak-monitoring.github.io/
 Package: alignak-all
 Architecture: all
 Replaces: shinken
-Depends: ${misc:Depends}, ${python:Depends}, python-requests >= 2.7.0, adduser, python-cherrypy3
+Depends: ${misc:Depends}, ${python:Depends}, python-requests (>= 2.7.0), adduser, python-cherrypy3
 Recommends: monitoring-plugins-basic, bsd-mailx | mailx
 Description: Flexible monitoring tool - Common files
  Common files for alignak monitoring.

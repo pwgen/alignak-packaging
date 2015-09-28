@@ -8,13 +8,16 @@ override_dh_clean:
 	rm -rf ./Alignak.egg-info
 	dh_clean
 
+override_dh_install:
+	dh_install
+	rm -rf $(CURDIR)/debian/alignak-all/usr/etc/
+	rm -rf $(CURDIR)/debian/alignak-all/usr/var/
+
 override_dh_installdirs:
 	dh_installdirs
 
 override_dh_installinit:
 	dh_installinit --no-start --name=alignak
-
-override_dh_installdocs:
 
 make_dfsg:
 	rm test/modules

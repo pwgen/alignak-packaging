@@ -1,0 +1,90 @@
+Index: alignak/bin/init.d/alignak-arbiter
+===================================================================
+--- alignak.orig/bin/init.d/alignak-arbiter
++++ alignak/bin/init.d/alignak-arbiter
+@@ -2,8 +2,8 @@
+ 
+ ### BEGIN INIT INFO
+ # Provides:          alignak-arbiter
+-# Required-Start:    $all
+-# Required-Stop:     $all
++# Required-Start:    $time $syslog $network $named $local_fs
++# Required-Stop:     $time $syslog $network $named $local_fs
+ # Default-Start:     2 3 4 5
+ # Default-Stop:      0 1 6
+ # Short-Description: Alignak arbiter daemon
+Index: alignak/bin/init.d/alignak-broker
+===================================================================
+--- alignak.orig/bin/init.d/alignak-broker
++++ alignak/bin/init.d/alignak-broker
+@@ -2,8 +2,8 @@
+ 
+ ### BEGIN INIT INFO
+ # Provides:          alignak-broker
+-# Required-Start:    $all
+-# Required-Stop:     $all
++# Required-Start:    $time $syslog $network $named $local_fs
++# Required-Stop:     $time $syslog $network $named $local_fs
+ # Default-Start:     2 3 4 5
+ # Default-Stop:      0 1 6
+ # Short-Description: Alignak broker daemon
+Index: alignak/bin/init.d/alignak-poller
+===================================================================
+--- alignak.orig/bin/init.d/alignak-poller
++++ alignak/bin/init.d/alignak-poller
+@@ -2,8 +2,8 @@
+ 
+ ### BEGIN INIT INFO
+ # Provides:          alignak-poller
+-# Required-Start:    $all
+-# Required-Stop:     $all
++# Required-Start:    $time $syslog $network $named $local_fs
++# Required-Stop:     $time $syslog $network $named $local_fs
+ # Default-Start:     2 3 4 5
+ # Default-Stop:      0 1 6
+ # Short-Description: Alignak poller daemon
+Index: alignak/bin/init.d/alignak-reactionner
+===================================================================
+--- alignak.orig/bin/init.d/alignak-reactionner
++++ alignak/bin/init.d/alignak-reactionner
+@@ -2,8 +2,8 @@
+ 
+ ### BEGIN INIT INFO
+ # Provides:          alignak-reactionner
+-# Required-Start:    $all
+-# Required-Stop:     $all
++# Required-Start:    $time $syslog $network $named $local_fs
++# Required-Stop:     $time $syslog $network $named $local_fs
+ # Default-Start:     2 3 4 5
+ # Default-Stop:      0 1 6
+ # Short-Description: Alignak reactionner daemon
+Index: alignak/bin/init.d/alignak-receiver
+===================================================================
+--- alignak.orig/bin/init.d/alignak-receiver
++++ alignak/bin/init.d/alignak-receiver
+@@ -2,8 +2,8 @@
+ 
+ ### BEGIN INIT INFO
+ # Provides:          alignak-receiver
+-# Required-Start:    $all
+-# Required-Stop:     $all
++# Required-Start:    $time $syslog $network $named $local_fs
++# Required-Stop:     $time $syslog $network $named $local_fs
+ # Default-Start:     2 3 4 5
+ # Default-Stop:      0 1 6
+ # Short-Description: Alignak receiver daemon
+Index: alignak/bin/init.d/alignak-scheduler
+===================================================================
+--- alignak.orig/bin/init.d/alignak-scheduler
++++ alignak/bin/init.d/alignak-scheduler
+@@ -2,8 +2,8 @@
+ 
+ ### BEGIN INIT INFO
+ # Provides:          alignak-scheduler
+-# Required-Start:    $all
+-# Required-Stop:     $all
++# Required-Start:    $time $syslog $network $named $local_fs
++# Required-Stop:     $time $syslog $network $named $local_fs
+ # Default-Start:     2 3 4 5
+ # Default-Stop:      0 1 6
+ # Short-Description: Alignak scheduler daemon
