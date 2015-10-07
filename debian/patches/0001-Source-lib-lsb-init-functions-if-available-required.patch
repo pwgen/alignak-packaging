@@ -1,0 +1,91 @@
+From: Mathieu Parent <math.parent@gmail.com>
+Date: Wed, 12 Feb 2014 18:06:21 +0100
+Subject: Source /lib/lsb/init-functions if available (required)
+
+---
+ bin/init.d/alignak-arbiter     | 4 ++++
+ bin/init.d/alignak-broker      | 4 ++++
+ bin/init.d/alignak-poller      | 4 ++++
+ bin/init.d/alignak-reactionner | 4 ++++
+ bin/init.d/alignak-receiver    | 4 ++++
+ bin/init.d/alignak-scheduler   | 4 ++++
+ 7 files changed, 24 insertions(+) 
+
+--- a/bin/init.d/alignak-arbiter
++++ b/bin/init.d/alignak-arbiter
+@@ -29,6 +29,10 @@
+ 
+ export ALIGNAK_MODULE_FILE="$NAME"  ## for 'alignak' init script to see that it's called by us
+ 
++if [ -f /lib/lsb/init-functions ]; then
++. /lib/lsb/init-functions
++fi
++
+ case "$1" in
+     start|stop|reload|restart|force-reload|status|check|checkconfig)
+         "$curdir/alignak" $@ "$SHORTNAME"
+--- a/bin/init.d/alignak-poller
++++ b/bin/init.d/alignak-poller
+@@ -30,6 +30,10 @@
+ 
+ export ALIGNAK_MODULE_FILE="$NAME"  ## for 'alignak' init script to see that it's called by us
+ 
++if [ -f /lib/lsb/init-functions ]; then
++. /lib/lsb/init-functions
++fi
++
+ case "$1" in
+     start|stop|reload|restart|force-reload|status|check|checkconfig)
+         "$curdir/alignak" $@ "$SHORTNAME"
+--- a/bin/init.d/alignak-reactionner
++++ b/bin/init.d/alignak-reactionner
+@@ -29,6 +29,10 @@
+ 
+ export ALIGNAK_MODULE_FILE="$NAME"  ## for 'alignak' init script to see that it's called by us
+ 
++if [ -f /lib/lsb/init-functions ]; then
++. /lib/lsb/init-functions
++fi
++
+ case "$1" in
+     start|stop|reload|restart|force-reload|status|check|checkconfig)
+         "$curdir/alignak" $@ "$SHORTNAME"
+--- a/bin/init.d/alignak-receiver
++++ b/bin/init.d/alignak-receiver
+@@ -29,6 +29,10 @@
+ 
+ export ALIGNAK_MODULE_FILE="$NAME"  ## for 'alignak' init script to see that it's called by us
+ 
++if [ -f /lib/lsb/init-functions ]; then
++. /lib/lsb/init-functions
++fi
++
+ case "$1" in
+     start|stop|reload|restart|force-reload|status|check|checkconfig)
+         "$curdir/alignak" $@ "$SHORTNAME"
+--- a/bin/init.d/alignak-scheduler
++++ b/bin/init.d/alignak-scheduler
+@@ -29,6 +29,10 @@
+ 
+ export ALIGNAK_MODULE_FILE="$NAME"  ## for 'alignak' init script to see that it's called by us
+ 
++if [ -f /lib/lsb/init-functions ]; then
++. /lib/lsb/init-functions
++fi
++
+ case "$1" in
+     start|stop|reload|restart|force-reload|status|check|checkconfig)
+         "$curdir/alignak" $@ "$SHORTNAME"
+--- a/bin/init.d/alignak-broker
++++ b/bin/init.d/alignak-broker
+@@ -29,6 +29,10 @@
+ 
+ export ALIGNAK_MODULE_FILE="$NAME"  ## for 'alignak' init script to see that it's called by us
+ 
++if [ -f /lib/lsb/init-functions ]; then
++. /lib/lsb/init-functions
++fi
++
+ case "$1" in
+     start|stop|reload|restart|force-reload|status|check|checkconfig)
+         "$curdir/alignak" $@ "$SHORTNAME"
