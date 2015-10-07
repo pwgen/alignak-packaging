@@ -7,7 +7,7 @@ Version:        0.1
 Release:        1
 URL:            https://github.com/Alignak-monitoring/alignak 
 Source0:        %{name}-%{version}.tar.gz
-License:        AGPLv3+
+License:        AGPLv3
 
 BuildRequires:  python-devel
 BuildRequires:  python-setuptools
@@ -24,18 +24,18 @@ environments.
 Alignak also provide interfaces with NDODB and Merlin database,
 Livestatus connector Alignak does not include any human interfaces.
 
-%package common
+%package all
 Summary: Alignak Common files
 Group:          Application/System
 Requires:       python >= 2.6
 Requires:       python-cherrypy
-Requires:       python-requests >= 2.6.0
+Requires:       python-requests >= 2.7.0
 Requires:       python-termcolor
 Requires:       python-setproctitle
 #Requires:       python-ujson
 
 
-%description common
+%description all
 Common files for alignak monitoring
 
 
@@ -52,8 +52,9 @@ Common files for alignak monitoring
 
 
 %build
-%{py_build}
-
+# Does not work on centos7
+#%{py_build}
+ 
 %install
 
 # See if we want usr/bin or usr/sbin for bin : --install-scripts=%{_sbindir}
@@ -71,8 +72,11 @@ rm %{buildroot}/%{python_sitelib}/*pth
 
 # Copy original file but remove sample
 cp -r %{_builddir}/%{name}/etc/* %{buildroot}%{_sysconfdir}/%{name}
-rm -rf %{buildroot}%{_sysconfdir}/%{name}/sample
+rm -rf %{buildroot}%{_sysconfdir}/%{name}/arbiter_cfg/objects/sample
 install -d -m0755 %{buildroot}%{_sysconfdir}/%{name}/modules
+
+# change exec of python bin
+chmod +x %{buildroot}/%{python_sitelib}/%{name}/bin/alignak*.py
 
 # init script, remove it with systemd
 install -d -m0755 %{buildroot}%{_sysconfdir}/init.d/
@@ -103,10 +107,11 @@ install -d -m0755 %{buildroot}/usr/share/pyshared/%{name}
 %clean
 rm -rf %{buildroot}
 
-%files common
+%files all
 # Alignak python lib
 %{python_sitelib}/%{name}
 %{python_sitelib}/%{name}*.egg-info
+
 
 # Module, for new style module setup (namespace will do the job)
 /usr/share/pyshared/%{name}
