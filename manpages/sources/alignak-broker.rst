@@ -28,12 +28,6 @@ Alignak broker daemon.
 
 The **alignak-broker**'s role is to export and manage data from schedulers (such as status). The management itself is done by modules.
 
-The following management modules are included:
-export into an NDO (Nagios Data Out) database (MySQL or Oracle backend)
-export to MERLIN (Module for Effortless Redundancy and Loadbalancing In Nagios) database (MySQL backend)
-service-perfdata export
-export to CouchDB
-
 Multiple modules can be enabled simultaneously
 
 OPTIONS

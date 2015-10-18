@@ -42,20 +42,11 @@ Alignak broker daemon.
 .sp
 The \fBalignak\-broker\fP\(aqs role is to export and manage data from schedulers (such as status). The management itself is done by modules.
 .sp
-The following management modules are included:
-export into an NDO (Nagios Data Out) database (MySQL or Oracle backend)
-export to MERLIN (Module for Effortless Redundancy and Loadbalancing In Nagios) database (MySQL backend)
-service\-perfdata export
-export to CouchDB
-.sp
 Multiple modules can be enabled simultaneously
 .SH OPTIONS
 .INDENT 0.0
 .INDENT 3.5
 .INDENT 0.0
-.TP
-.B \-v\fP,\fB  \-\-verify\-config
-Verify config file and exit
 .TP
 .BI \-c \ INI\-CONFIG\-FILE\fP,\fB \ \-\-config\fB= INI\-CONFIG\-FILE
 Config file
