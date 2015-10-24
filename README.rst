@@ -12,8 +12,17 @@ Debian/Ubuntu
    cp -r ~/alignak-packaging/debian ~/alignak-packaging/manpages ~/alignak
    cd ~/alignak
    # You will package current develop here, if you need master or specific checkout what you need
-   git-buildpackage -us -uc -tc -b
-
+   # You could just use `git-buildpackage -us -uc -tc -b` here but you have to add and commit the new file added
+   # This commit can't be pushed upstream of course
+  
+   RELEASE=$(git log -1  --format=%ct.%h)
+   cd ../
+   VERSION=$(awk -F'\(?\-?' '/alignak/ {print $2}' alignak/debian/changelog)
+   sed -i "s/-\([0-9]\+\))/-\1.$RELEASE)/g" alignak/debian/changelog
+   tar -czf alignak_$VERSION.orig.tar.gz alignak
+   cd alignak
+   dpkg-buildpackage
+   lintian ../alignak*.deb
 
 Fedora/RedHat/CentOs
 ====================
@@ -28,7 +37,7 @@ Fedora/RedHat/CentOs
    RELEASE=$(git log -1  --format=%ct_%h)
    cd ../
    VERSION=$(awk '/Version/ {print $2}' ~/alignak-packaging/alignak.spec)
-   sed -i "s/\(Release:.*\)$/\1_$VERSION/g" ~/alignak-packaging/alignak.spec
+   sed -i "s/\(Release:.*\)$/\1_$RELEASE/g" ~/alignak-packaging/alignak.spec
    mkdir -p ~/rpmbuild/SOURCES
    tar -czf ~/rpmbuild/SOURCES/alignak-$VERSION.tar.gz alignak
    rpmbuild -ba  ~/alignak-packaging/alignak.spec
