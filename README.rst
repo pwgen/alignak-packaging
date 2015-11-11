@@ -28,6 +28,7 @@ Fedora/RedHat/CentOs
 ====================
 
 ::
+
    yum install rpm-build git python-pbr python-devel
    git clone https://github.com/Alignak-monitoring/alignak.git ~/alignak
    git clone https://github.com/Alignak-monitoring/alignak-packaging.git ~/alignak-packaging
