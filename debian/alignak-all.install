@@ -25,4 +25,3 @@ etc/arbiter_cfg/objects/services/*
 etc/arbiter_cfg/resource.d/*
 etc/arbiter_cfg/daemons_cfg/*
 etc/arbiter_cfg/modules/*
-etc/modules/*
