@@ -67,9 +67,6 @@ rm -rf %{buildroot}%{_sysconfdir}/%{name}/*
 rm -rf %{buildroot}/usr/etc/%{name}/*
 rm -rf %{buildroot}/usr/etc/default/%{name}
 
-#Remove .pth
-rm %{buildroot}/%{python_sitelib}/*pth
-
 # Copy original file but remove sample
 cp -r %{_builddir}/%{name}/etc/* %{buildroot}%{_sysconfdir}/%{name}
 rm -rf %{buildroot}%{_sysconfdir}/%{name}/arbiter_cfg/objects/sample
