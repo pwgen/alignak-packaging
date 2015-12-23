@@ -1,27 +1,7 @@
 bin/init.d/alignak* /etc/init.d/
 #etc/default/alignak
-etc/daemons
-etc/daemons/brokerd.ini
-etc/daemons/receiverd.ini
-etc/daemons/schedulerd.ini
-etc/daemons/reactionnerd.ini
-etc/daemons/pollerd.ini
-etc/certs/*
-etc/alignak.cfg
-etc/arbiter_cfg/objects/dependencies/*
-etc/arbiter_cfg/objects/timeperiods/*
-etc/arbiter_cfg/objects/servicegroups/*
-etc/arbiter_cfg/objects/contacts/*
-etc/arbiter_cfg/objects/commands/*
-etc/arbiter_cfg/objects/hosts/*
-etc/arbiter_cfg/objects/notificationways/*
-etc/arbiter_cfg/objects/escalations/*
-etc/arbiter_cfg/objects/contactgroups/*
-etc/arbiter_cfg/objects/hostgroups/*
-etc/arbiter_cfg/objects/realms/*
-etc/arbiter_cfg/objects/templates/*
-etc/arbiter_cfg/objects/packs/*
-etc/arbiter_cfg/objects/services/*
-etc/arbiter_cfg/resource.d/*
-etc/arbiter_cfg/daemons_cfg/*
-etc/arbiter_cfg/modules/*
+etc/daemons/* /etc/alignak/daemons/
+etc/certs/* /etc/alignak/certs/
+etc/alignak.cfg /etc/alignak/
+etc/arbiter_cfg/* /etc/alignak/arbiter_cfg
+
