@@ -32,6 +32,7 @@ Requires:       python-cherrypy
 Requires:       python-requests >= 2.7.0
 Requires:       python-termcolor
 Requires:       python-setproctitle
+Requires:       numpy
 #Requires:       python-ujson
 
 
