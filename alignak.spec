@@ -82,10 +82,10 @@ mv %{buildroot}/usr/etc/init.d/* %{buildroot}%{_sysconfdir}/init.d/
 install -d -m0755 %{buildroot}%{_sysconfdir}/default
 
 sed -i -e 's:\$ETC\$:%{_sysconfdir}/%{name}:g' \
-    -e 's:\$VAR\$:%{_localstatedir}:g' \
-    -e 's:\$RUN\$:%{_localstatedir}/run:g' \
+    -e 's:\$VAR\$:%{_localstatedir}/lib/%{name}:g' \
+    -e 's:\$RUN\$:%{_localstatedir}/run/%{name}:g' \
     -e 's:\$SCRIPTS_BIN\$:%{_bindir}:g' \
-    -e 's:\$LOG\$:%{_localstatedir}/log:g' \
+    -e 's:\$LOG\$:%{_localstatedir}/log/%{name}:g' \
     %{_builddir}/%{name}/bin/default/%{name}.in
 
 cp %{_builddir}/%{name}/bin/default/%{name}.in %{buildroot}%{_sysconfdir}/default/%{name}
