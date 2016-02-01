@@ -3,7 +3,7 @@
 
 Summary:        Python Monitoring tool
 Name:           alignak
-Version:        0.1
+Version:        0.2
 Release:        1
 URL:            https://github.com/Alignak-monitoring/alignak 
 Source0:        %{name}-%{version}.tar.gz
@@ -129,5 +129,7 @@ rm -rf %{buildroot}
 %{_sysconfdir}/default/%{name}
 
 %changelog
+* Sun Jan 31 2016 Sebastien Coavoux <alignak@pyseb.cx> - 0.2-1
+- Update version
 * Sun Sep 20 2015 Sebastien Coavoux <alignak@pyseb.cx> - 0.1-1
 - Initial package

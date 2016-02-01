@@ -1,3 +1,8 @@
+alignak (0.2-1) unstable; urgency=low
+
+  * Update version  
+
+ -- Sebastien Coavoux <debian@pyseb.cx>  Sun, 31 Jan 2016 19:30:09 -0400
 alignak (0.1-1) unstable; urgency=low
 
   * Initial release  
