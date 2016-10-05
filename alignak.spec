@@ -70,7 +70,7 @@ rm -rf %{buildroot}/usr/etc/default/%{name}
 
 # Copy original file but remove sample
 cp -r %{_builddir}/%{name}/etc/* %{buildroot}%{_sysconfdir}/%{name}
-rm -rf %{buildroot}%{_sysconfdir}/%{name}/arbiter_cfg/objects/sample
+rm -rf %{buildroot}%{_sysconfdir}/%{name}/sample
 install -d -m0755 %{buildroot}%{_sysconfdir}/%{name}/modules
 
 # change exec of python bin
