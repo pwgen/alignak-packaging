@@ -6,12 +6,9 @@ alignak-scheduler
 Alignak scheduler daemon
 ------------------------
 
-:Author:            Michael Leinartas,
-                    Arthur Gautier,
-                    David Hannequin,
-                    Thibault Cohen
-:Date:              2014-04-24
-:Version:           2.0.1
+:Author:            Alignak Team
+:Date:              2015-10-31
+:Version:           1.0.0
 :Manual section:    8
 :Manual group:      Alignak commands
 
@@ -34,6 +31,6 @@ OPTIONS
 
   -c INI-CONFIG-FILE, --config=INI-CONFIG-FILE  Daemon configuration file
   -d, --daemon                                  Run in daemon mode
-  -r, --replace                                 Replace previous running arbiter
+  -r, --replace                                 Replace previous running scheduler
   -h, --help                                    Show this help message
   --debugfile=DEBUGFILE                         Enable debug logging to *DEBUGFILE*

@@ -6,12 +6,9 @@ alignak-arbiter
 Alignak arbiter daemon
 ----------------------
 
-:Author:            Michael Leinartas,
-                    Arthur Gautier,
-                    David Hannequin,
-                    Thibault Cohen
-:Date:              2014-04-24
-:Version:           2.0.1
+:Author:            Alignak Team
+:Date:              2015-10-31
+:Version:           1.0.0
 :Manual section:    8
 :Manual group:      Alignak commands
 
