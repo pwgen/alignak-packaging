@@ -26,16 +26,14 @@ DESCRIPTION
 
 Alignak poller daemon.
 
-The **alignak-poller** daemon is in charge of launching plugins as requested by schedulers. When the check is finished it returns the result to the schedulers.
+The **alignak-poller** daemon is in charge of launching plugins as requested by schedulers.
+When the check is finished it returns the result to the schedulers.
 
 OPTIONS
 =======
 
-  -c INI-CONFIG-FILE, --config=INI-CONFIG-FILE  Config file
+  -c INI-CONFIG-FILE, --config=INI-CONFIG-FILE  Daemon configuration file
   -d, --daemon                                  Run in daemon mode
-  -r, --replace                                 Replace previous running poller
+  -r, --replace                                 Replace previous running arbiter
   -h, --help                                    Show this help message
-  --version                                     Show program's version number 
   --debugfile=DEBUGFILE                         Enable debug logging to *DEBUGFILE*
-  -p PROFILE, --profile=PROFILE                 Dump a profile file. Need the python cProfile librairy
-

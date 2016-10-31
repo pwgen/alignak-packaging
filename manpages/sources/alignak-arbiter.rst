@@ -19,8 +19,8 @@ Alignak arbiter daemon
 SYNOPSIS
 ========
 
-  **alignak-arbiter** [-dr] [-c *CONFIGFILE*] [--debugfile *DEBUGFILE*]
-  **alignak-arbiter** -v [-c *CONFIGFILE*]
+  **alignak-arbiter** [-dr] [-c *INI-CONFIG-FILE*] [-a *CONFIG-FILE*] [--debugfile *DEBUGFILE*]
+  **alignak-arbiter** -V [-c *INI-CONFIG-FILE*] [-a *CONFIG-FILE*]
 
 DESCRIPTION
 ===========
@@ -28,26 +28,20 @@ DESCRIPTION
 Alignak arbiter daemon
 
 The **alignak-arbiter** daemon reads the configuration, divides it into parts
-(N schedulers = N parts), and distributes them to the appropriate Alignak daemons.
+(N schedulers = N parts), and distributes the configuration to the appropriate
+Alignak daemons.
 Additionally, it manages the high availability features: if a particular daemon dies,
 it re-routes the configuration managed by this failed  daemon to the configured spare.
-Finally, it receives input from users (such as external commands from nagios.cmd) and
-routes them to the appropriate daemon. There can only be one active arbiter in the
-architecture.
+There can only be one active arbiter in the architecture.
 
 
 OPTIONS
 =======
 
-  -v, --verify-config                       Verify config file and exit
-  -c CONFIGFILE, --config=CONFIGFILE        Config file (your nagios.cfg). Multiple -c can be used, it will be like if all files was just one
-  -d, --daemon                              Run in daemon mode
-  -r, --replace                             Replace previous running arbiter
-  -h, --help                                Show this help message
-  --version                                 Show program's version number
-  --debugfile=DEBUGFILE                     Enable debug logging to *DEBUGFILE*
-  -p PROFILE, --profile=PROFILE             Dump a profile file. Need the python cProfile librairy
-  -a ANALYSE, --analyse=ANALYSE             Dump an analyse statistics file, for support
-  -m MIGRATE, --migrate=MIGRATE             Migrate the raw configuration read from the arbier to another module. --> VERY EXPERIMENTAL!
-  -n ARB_NAME, --name=ARB_NAME              Give the arbiter name to use. Optionnal, will use the hostaddress if not provide to find it.
-
+  -V, --verify-config                           Verify monitoring configuration file and exit
+  -a CONFIGFILE, --arbiter=CONFIGFILE           Monitored objects configuration file (eg. nagios.cfg). Multiple -a can be used, it will be like if all files was just one
+  -c INI-CONFIG-FILE, --config=INI-CONFIG-FILE  Daemon configuration file
+  -d, --daemon                                  Run in daemon mode
+  -r, --replace                                 Replace previous running arbiter
+  -h, --help                                    Show this help message
+  --debugfile=DEBUGFILE                         Enable debug logging to *DEBUGFILE*

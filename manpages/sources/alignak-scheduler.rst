@@ -26,16 +26,14 @@ DESCRIPTION
 
 Alignak scheduler daemon.
 
-The **alignak-scheduler** manages the dispatching of checks and actions sent to alignak-reactionner and alignak-poller based on configuration sent to it by alignak-arbiter.
+The **alignak-scheduler** manages the dispatching of checks and actions sent to
+alignak-reactionner and alignak-poller based on configuration sent to it by alignak-arbiter.
 
 OPTIONS
 =======
 
-  -c INI-CONFIG-FILE, --config=INI-CONFIG-FILE  Config file
+  -c INI-CONFIG-FILE, --config=INI-CONFIG-FILE  Daemon configuration file
   -d, --daemon                                  Run in daemon mode
-  -r, --replace                                 Replace previous running scheduler
+  -r, --replace                                 Replace previous running arbiter
   -h, --help                                    Show this help message
-  --version                                     Show program's version number 
   --debugfile=DEBUGFILE                         Enable debug logging to *DEBUGFILE*
-  -p PROFILE, --profile=PROFILE                 Dump a profile file. Need the python cProfile librairy
-

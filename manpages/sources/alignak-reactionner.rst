@@ -26,16 +26,14 @@ DESCRIPTION
 
 Alignak reactionner daemon.
 
-The **alignak-reactionner** is similar to alignak-poller but handles actions such as notifications and event-handlers from the schedulers rather than checks.
+The **alignak-reactionner** is similar to alignak-poller but handles actions such as
+notifications and event-handlers from the schedulers rather than checks.
 
 OPTIONS
 =======
 
-  -c INI-CONFIG-FILE, --config=INI-CONFIG-FILE  Config file
+  -c INI-CONFIG-FILE, --config=INI-CONFIG-FILE  Daemon configuration file
   -d, --daemon                                  Run in daemon mode
-  -r, --replace                                 Replace previous running reactionner
+  -r, --replace                                 Replace previous running arbiter
   -h, --help                                    Show this help message
-  --version                                     Show program's version number 
   --debugfile=DEBUGFILE                         Enable debug logging to *DEBUGFILE*
-  -p PROFILE, --profile=PROFILE                 Dump a profile file. Need the python cProfile librairy
-

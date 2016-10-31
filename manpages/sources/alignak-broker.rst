@@ -26,18 +26,16 @@ DESCRIPTION
 
 Alignak broker daemon.
 
-The **alignak-broker**'s role is to export and manage data from schedulers (such as status). The management itself is done by modules.
+The **alignak-broker**'s exports and manages data from schedulers (such as status).
+The management itself is done by the broker modules.
 
 Multiple modules can be enabled simultaneously
 
 OPTIONS
 =======
 
-  -c INI-CONFIG-FILE, --config=INI-CONFIG-FILE  Config file
+  -c INI-CONFIG-FILE, --config=INI-CONFIG-FILE  Daemon configuration file
   -d, --daemon                                  Run in daemon mode
-  -r, --replace                                 Replace previous running broker
+  -r, --replace                                 Replace previous running arbiter
   -h, --help                                    Show this help message
-  --version                                     Show program's version number 
   --debugfile=DEBUGFILE                         Enable debug logging to *DEBUGFILE*
-  -p PROFILE, --profile=PROFILE                 Dump a profile file. Need the python cProfile librairy
-

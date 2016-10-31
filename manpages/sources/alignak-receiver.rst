@@ -26,16 +26,14 @@ DESCRIPTION
 
 Alignak receiver daemon.
 
-The **alignak-receiver** daemon manages passive information and serves as a buffer that will be read from by the alignak-arbiter to dispatch data.
+The **alignak-receiver** daemon manages passive information and serves as a buffer that
+ will be read from by the alignak-arbiter and/or alignak-scheduler to dispatch data.
 
 OPTIONS
 =======
 
-  -c INI-CONFIG-FILE, --config=INI-CONFIG-FILE  Config file
+  -c INI-CONFIG-FILE, --config=INI-CONFIG-FILE  Daemon configuration file
   -d, --daemon                                  Run in daemon mode
-  -r, --replace                                 Replace previous running receiver
+  -r, --replace                                 Replace previous running arbiter
   -h, --help                                    Show this help message
-  --version                                     Show program's version number 
   --debugfile=DEBUGFILE                         Enable debug logging to *DEBUGFILE*
-  -p PROFILE, --profile=PROFILE                 Dump a profile file. Need the python cProfile librairy
-
