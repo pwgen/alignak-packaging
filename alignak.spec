@@ -79,6 +79,7 @@ chmod +x %{buildroot}/%{python_sitelib}/%{name}/bin/alignak*.py
 # systemd part
 install -d -m0755 %{buildroot}%{_unitdir}
 mv %{_builddir}/%{name}/systemd/* %{buildroot}%{_unitdir}/
+rm -rf %{buildroot}/usr/etc/init.d/%{name}*
 
 # log
 install -d -m0755 %{buildroot}%{_localstatedir}/log/%{name}
