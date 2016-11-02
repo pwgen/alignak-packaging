@@ -1,0 +1,12 @@
+[Unit]
+Description=Alignak Broker
+After=syslog.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/bin/alignak-broker -d -c /etc/alignak/daemons/brokerd.ini
+KillMode=process
+TimeoutStopSec=3
+
+[Install]
+WantedBy=multi-user.target

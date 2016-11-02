@@ -1,0 +1,12 @@
+[Unit]
+Description=Alignak Reactionner
+After=syslog.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/bin/alignak-reactionner -d -c /etc/alignak/daemons/reactionnerd.ini
+KillMode=process
+TimeoutStopSec=3
+
+[Install]
+WantedBy=multi-user.target

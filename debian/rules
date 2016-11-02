@@ -10,9 +10,9 @@ override_dh_clean:
 
 override_dh_install:
 	dh_install
-	mv $(CURDIR)/debian/alignak-all/usr/etc/default $(CURDIR)/debian/alignak-all/etc/
 	rm -rf $(CURDIR)/debian/alignak-all/usr/etc/
 	rm -rf $(CURDIR)/debian/alignak-all/usr/var/
+	#mv $(CURDIR)/debian/alignak-all/usr/etc/default $(CURDIR)/debian/alignak-all/etc/
 
 override_dh_installdirs:
 	dh_installdirs

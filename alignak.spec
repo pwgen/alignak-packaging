@@ -76,20 +76,9 @@ install -d -m0755 %{buildroot}%{_sysconfdir}/%{name}/modules
 # change exec of python bin
 chmod +x %{buildroot}/%{python_sitelib}/%{name}/bin/alignak*.py
 
-# init script, remove it with systemd
-install -d -m0755 %{buildroot}%{_sysconfdir}/init.d/
-mv %{buildroot}/usr/etc/init.d/* %{buildroot}%{_sysconfdir}/init.d/
-install -d -m0755 %{buildroot}%{_sysconfdir}/default
-
-sed -i -e 's:\$ETC\$:%{_sysconfdir}/%{name}:g' \
-    -e 's:\$VAR\$:%{_localstatedir}/lib/%{name}:g' \
-    -e 's:\$RUN\$:%{_localstatedir}/run/%{name}:g' \
-    -e 's:\$SCRIPTS_BIN\$:%{_bindir}:g' \
-    -e 's:\$LOG\$:%{_localstatedir}/log/%{name}:g' \
-    %{_builddir}/%{name}/bin/default/%{name}.in
-
-cp %{_builddir}/%{name}/bin/default/%{name}.in %{buildroot}%{_sysconfdir}/default/%{name}
-
+# systemd part
+install -d -m0755 %{buildroot}%{_unitdir}
+mv %{_builddir}/%{name}/systemd/* %{buildroot}%{_unitdir}/
 
 # log
 install -d -m0755 %{buildroot}%{_localstatedir}/log/%{name}
@@ -124,9 +113,30 @@ rm -rf %{buildroot}
 # Daemon python binaries
 /%{_bindir}/%{name}-*
 
-# Init script. Maybe we should exclude this when systemd in setup
-%{_sysconfdir}/init.d/%{name}*
-%{_sysconfdir}/default/%{name}
+# Systemd part
+%{_unitdir}/%{name}*
+
+
+%post
+/bin/systemctl daemon-reload >/dev/null 2>&1 || :
+
+%preun
+/bin/systemctl --no-reload disable %{name}-arbiter.service > /dev/null 2>&1 || :
+/bin/systemctl --no-reload disable %{name}-scheduler.service > /dev/null 2>&1 || :
+/bin/systemctl --no-reload disable %{name}-poller.service > /dev/null 2>&1 || :
+/bin/systemctl --no-reload disable %{name}-receiver.service > /dev/null 2>&1 || :
+/bin/systemctl --no-reload disable %{name}-broker.service > /dev/null 2>&1 || :
+/bin/systemctl --no-reload disable %{name}-reactionner.service > /dev/null 2>&1 || :
+/bin/systemctl stop %{name}-arbiter.service > /dev/null 2>&1 || :
+/bin/systemctl stop %{name}-scheduler.service > /dev/null 2>&1 || :
+/bin/systemctl stop %{name}-poller.service > /dev/null 2>&1 || :
+/bin/systemctl stop %{name}-receiver.service > /dev/null 2>&1 || :
+/bin/systemctl stop %{name}-broker.service > /dev/null 2>&1 || :
+/bin/systemctl stop %{name}-reactionner.service > /dev/null 2>&1 || :
+
+
+%postun
+/bin/systemctl daemon-reload >/dev/null 2>&1 || :
 
 %changelog
 * Sun Jan 31 2016 Sebastien Coavoux <alignak@pyseb.cx> - 0.2-1

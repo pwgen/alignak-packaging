@@ -1,5 +1,5 @@
 #!/bin/sh
-# postrm script for alignak-common
+# postrm script for alignak-all
 #
 # see: dh_installdeb(1)
 
@@ -23,14 +23,28 @@ case "$1" in
     remove)
     ;;
     purge)
-        ## No need init.d autostart anymore
-        update-rc.d -f alignak remove > /dev/null
-        update-rc.d -f alignak-arbiter remove > /dev/null
-        update-rc.d -f alignak-scheduler remove > /dev/null
-        update-rc.d -f alignak-poller remove > /dev/null
-        update-rc.d -f alignak-broker remove > /dev/null
-        update-rc.d -f alignak-reactionner remove > /dev/null
-        update-rc.d -f alignak-receiver remove > /dev/null
+
+        # SysV part
+        if [ -f /etc/default/alignak ]; then
+            ## No need init.d autostart anymore
+            update-rc.d -f alignak remove > /dev/null
+            update-rc.d -f alignak-arbiter remove > /dev/null
+            update-rc.d -f alignak-scheduler remove > /dev/null
+            update-rc.d -f alignak-poller remove > /dev/null
+            update-rc.d -f alignak-broker remove > /dev/null
+            update-rc.d -f alignak-reactionner remove > /dev/null
+            update-rc.d -f alignak-receiver remove > /dev/null
+
+
+        else
+            systemctl daemon-reload > /dev/null || :
+            systemctl disable alignak-arbiter > /dev/null || :
+            systemctl disable alignak-scheduler > /dev/null || :
+            systemctl disable alignak-poller > /dev/null || :
+            systemctl disable alignak-broker > /dev/null || :
+            systemctl disable alignak-reactionner > /dev/null || :
+            systemctl disable alignak-receiver > /dev/null || :
+
         ## Removes directory permissions
         for i in /var/run/alignak /var/log/alignak /var/lib/alignak
         do

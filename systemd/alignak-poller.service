@@ -1,0 +1,12 @@
+[Unit]
+Description=Alignak Poller
+After=syslog.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/bin/alignak-poller -d -c /etc/alignak/daemons/pollerd.ini
+KillMode=process
+TimeoutStopSec=3
+
+[Install]
+WantedBy=multi-user.target
