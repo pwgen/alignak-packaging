@@ -34,3 +34,4 @@ OPTIONS
   -r, --replace                                 Replace previous running poller
   -h, --help                                    Show this help message
   --debugfile=DEBUGFILE                         Enable debug logging to *DEBUGFILE*
+  --version                                     Show program's version number
