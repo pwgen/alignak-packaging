@@ -6,12 +6,9 @@ alignak-poller
 Alignak poller daemon
 ---------------------
 
-:Author:            Michael Leinartas,
-                    Arthur Gautier,
-                    David Hannequin,
-                    Thibault Cohen
-:Date:              2014-04-24
-:Version:           2.0.1
+:Author:            Alignak Team
+:Date:              2015-10-31
+:Version:           1.0.0
 :Manual section:    8
 :Manual group:      Alignak commands
 
@@ -26,16 +23,15 @@ DESCRIPTION
 
 Alignak poller daemon.
 
-The **alignak-poller** daemon is in charge of launching plugins as requested by schedulers. When the check is finished it returns the result to the schedulers.
+The **alignak-poller** daemon is in charge of launching plugins as requested by schedulers.
+When the check is finished it returns the result to the schedulers.
 
 OPTIONS
 =======
 
-  -c INI-CONFIG-FILE, --config=INI-CONFIG-FILE  Config file
+  -c INI-CONFIG-FILE, --config=INI-CONFIG-FILE  Daemon configuration file
   -d, --daemon                                  Run in daemon mode
   -r, --replace                                 Replace previous running poller
   -h, --help                                    Show this help message
-  --version                                     Show program's version number 
   --debugfile=DEBUGFILE                         Enable debug logging to *DEBUGFILE*
-  -p PROFILE, --profile=PROFILE                 Dump a profile file. Need the python cProfile librairy
-
+  --version                                     Show program's version number
