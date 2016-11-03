@@ -44,6 +44,7 @@ case "$1" in
             systemctl disable alignak-broker > /dev/null || :
             systemctl disable alignak-reactionner > /dev/null || :
             systemctl disable alignak-receiver > /dev/null || :
+        fi
 
         ## Removes directory permissions
         for i in /var/run/alignak /var/log/alignak /var/lib/alignak
