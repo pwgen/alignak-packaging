@@ -22,7 +22,7 @@ case "$1" in
         for daemon_ in arbiter scheduler poller broker reactionner receiver; do
             if [ -x /usr/sbin/invoke-rc.d ]; then
                 invoke-rc.d alignak-$daemon_ stop > /dev/null 2>&1 || true
-            elif [ -f /etc/init.c/alignak-$daemon_ ]
+            elif [ -f /etc/init.c/alignak-$daemon_ ]; then
                 /etc/init.d/alignak-$daemon_ stop > /dev/null 2>&1 || true
             else
                 systemctl stop alignak-$daemon_ > /dev/null 2>&1 || true
