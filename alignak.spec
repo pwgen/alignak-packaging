@@ -33,6 +33,7 @@ Requires:       python-requests >= 2.7.0
 Requires:       python-termcolor
 Requires:       python-setproctitle
 Requires:       numpy
+Requires:       pyOpenSSL >= 0.15
 #Requires:       python-ujson
 
 
