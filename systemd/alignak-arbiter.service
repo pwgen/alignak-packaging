@@ -4,7 +4,7 @@ After=syslog.target
 
 [Service]
 Type=forking
-ExecStart=/usr/local/bin/alignak-arbiter -d -a /etc/alignak/alignak.cfg -c /etc/alignak/daemons/arbiterd.ini
+ExecStart=/usr/bin/alignak-arbiter -d -a /etc/alignak/alignak.cfg -c /etc/alignak/daemons/arbiterd.ini
 KillMode=process
 TimeoutStopSec=3
 

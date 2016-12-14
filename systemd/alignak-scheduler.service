@@ -4,7 +4,7 @@ After=syslog.target
 
 [Service]
 Type=forking
-ExecStart=/usr/local/bin/alignak-scheduler -d -c /etc/alignak/daemons/schedulerd.ini
+ExecStart=/usr/bin/alignak-scheduler -d -c /etc/alignak/daemons/schedulerd.ini
 KillMode=process
 TimeoutStopSec=3
 
