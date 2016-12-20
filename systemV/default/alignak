@@ -18,8 +18,8 @@
 # along with Alignak.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-# This file is copied to the */etc/default/alignak* forlder, this to be found and read by the
-# alignak script.
+# This file is copied to the */etc/default/alignak* folder, this to be found and read by the
+# alignak system startup script.
 
 # Main alignak variables:
 # - BIN is where the launch scripts are located
@@ -33,24 +33,16 @@
 # - LOG is where we put log files
 #   (Debian sets to /var/log/alignak)
 #
-# Those variables are updated during the Alignak packging process to indicate where
-# the installer copied the files.
-BIN=$BIN$
-ETC=$ETC$
-VAR=$VAR$
-RUN=$RUN$
-LOG=$LOG$
+# Those variables define where the installer copied the files.
+BIN=/usr/bin
+ETC=/etc/alignak
+VAR=/var/lib/alignak
+RUN=/var/run/alignak
+LOG=/var/log/alignak
 #--
 #-- Do not change the file content below this line until you really know what your are doing ;)
 #--
 
-#
-# For each Alignak daemon, we define:
-# - the location of its configuration file
-# - its launching script
-# - the location of its debug log file (if any is used)
-# - the location of its pid file
-#
 # For the arbiter, we also define the name of the 2 main configuration files.
 # There may be 2 configuration files because tools like Centreon generate those...
 #
@@ -61,11 +53,18 @@ ALIGNAKCFG="$ETC/alignak.cfg"
 if [ -z "$ALIGNAKCFG" ]; then
     ALIGNAKCFG="$ETC/alignak.cfg"
 fi
-echo "Alignak main configuration file is: $ALIGNAKCFG"
 
 # Alignak secondary configuration file
 #ALIGNAKSPECIFICCFG="$ETC/alignak-specific.cfg"
 
+
+#
+# For each Alignak daemon, we define:
+# - the location of its configuration file
+# - the name of its launching script
+# - the location of its debug log file (if any is used)
+# - the location of its pid file
+#
 
 ### ARBITER PART ###
 ARBITERCFG="$ETC/daemons/arbiterd.ini"

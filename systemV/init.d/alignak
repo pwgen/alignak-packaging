@@ -144,6 +144,7 @@ fi
 if [ -z "$ALIGNAKCFG" ]; then
     ALIGNAKCFG="$ETC/alignak.cfg"
 fi
+echo "Alignak main configuration file is: $ALIGNAKCFG"
 
 # If var or run dir is missing, create them and chown them
 [ ! -d $VAR ] && mkdir -p $VAR && chown $ALIGNAKUSER:$ALIGNAKGROUP $VAR

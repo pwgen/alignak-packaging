@@ -20,9 +20,9 @@
 
 case "$1" in
     configure)
-        ## Create user and group
-        # Note: if the user exists, it's properties won't be changed (gid, home, shell)
-        adduser  --quiet --system --home /var/lib/alignak --no-create-home --group alignak || true
+        ## Create alignak user and group
+        # Note: if the user exists, his properties won't be changed (gid, home, shell)
+        adduser --quiet --system --home /var/lib/alignak --no-create-home --group alignak || true
 
         ## Create nagios group
         addgroup --system nagios || true
@@ -44,15 +44,7 @@ case "$1" in
         done
 
         # SysV part
-        if [ -f /etc/default/alignaksdf ]; then        
-            sed -e 's:ETC=.*:ETC=/etc/alignak:g' \
-                -e 's:VAR=.*:VAR=/var/lib/alignak:g' \
-                -e 's:BIN=.*:BIN=/usr/bin:g' \
-                -e 's:RUN=.*:RUN=/var/run/alignak:g' \
-                -e 's:LOG=.*:LOG=/var/log/alignak:g' \
-                -i /etc/default/alignak
-
-
+        if [ -f /etc/default/alignak ]; then
             ## Ensure alignak starts automatically
             update-rc.d -f alignak-arbiter defaults > /dev/null
             update-rc.d -f alignak-scheduler defaults > /dev/null
