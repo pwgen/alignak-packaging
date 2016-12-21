@@ -283,14 +283,6 @@ Debian/Ubuntu
     # Check package compliance
     lintian ../alignak*.deb
             W: alignak-all: non-standard-dir-in-usr usr/alignak/
-            W: alignak-all: file-in-unusual-dir usr/alignak/bin/etc/default/alignak.in
-            W: alignak-all: file-in-unusual-dir usr/alignak/bin/etc/init.d/alignak
-            W: alignak-all: file-in-unusual-dir usr/alignak/bin/etc/init.d/alignak-arbiter
-            W: alignak-all: file-in-unusual-dir usr/alignak/bin/etc/init.d/alignak-broker
-            W: alignak-all: file-in-unusual-dir usr/alignak/bin/etc/init.d/alignak-poller
-            W: alignak-all: file-in-unusual-dir usr/alignak/bin/etc/init.d/alignak-reactionner
-            W: alignak-all: file-in-unusual-dir usr/alignak/bin/etc/init.d/alignak-receiver
-            W: alignak-all: file-in-unusual-dir usr/alignak/bin/etc/init.d/alignak-scheduler
             W: alignak-all: file-in-unusual-dir usr/alignak/etc/alignak.cfg
             W: alignak-all: file-in-unusual-dir usr/alignak/etc/alignak.ini
             W: alignak-all: file-in-unusual-dir usr/alignak/etc/arbiter/daemons/arbiter-master.cfg
@@ -362,36 +354,37 @@ Debian/Ubuntu
             W: alignak-all: file-in-unusual-dir usr/alignak/etc/sample/sample/hosts/switch-cisco.cfg
             W: alignak-all: file-in-unusual-dir usr/alignak/etc/sample/sample/services/eue_glpi.cfg
             W: alignak-all: file-in-unusual-dir usr/alignak/etc/sample/sample/triggers.d/avg_http.trig
-            W: alignak-all: init.d-script-not-marked-as-conffile etc/init.d/alignak-arbiter
-            E: alignak-all: init.d-script-not-included-in-package etc/init.d/alignak-arbiter
-            W: alignak-all: init.d-script-not-marked-as-conffile etc/init.d/alignak-receiver
-            E: alignak-all: init.d-script-not-included-in-package etc/init.d/alignak-receiver
-            W: alignak-all: init.d-script-not-marked-as-conffile etc/init.d/alignak-reactionner
-            E: alignak-all: init.d-script-not-included-in-package etc/init.d/alignak-reactionner
-            W: alignak-all: init.d-script-not-marked-as-conffile etc/init.d/alignak-poller
-            E: alignak-all: init.d-script-not-included-in-package etc/init.d/alignak-poller
-            W: alignak-all: init.d-script-not-marked-as-conffile etc/init.d/alignak
-            E: alignak-all: init.d-script-not-included-in-package etc/init.d/alignak
             W: alignak-all: init.d-script-not-marked-as-conffile etc/init.d/alignak-scheduler
             E: alignak-all: init.d-script-not-included-in-package etc/init.d/alignak-scheduler
             W: alignak-all: init.d-script-not-marked-as-conffile etc/init.d/alignak-broker
             E: alignak-all: init.d-script-not-included-in-package etc/init.d/alignak-broker
-            W: alignak-all: executable-not-elf-or-script etc/alignak/daemons/reactionnerd.ini
-            W: alignak-all: executable-not-elf-or-script etc/alignak/alignak.cfg
-            W: alignak-all: executable-not-elf-or-script etc/alignak/daemons/brokerd.ini
-            W: alignak-all: executable-not-elf-or-script etc/alignak/daemons/arbiterd.ini
-            W: alignak-all: executable-not-elf-or-script usr/alignak/etc/daemons/receiverd.ini
-            W: alignak-all: executable-not-elf-or-script usr/alignak/etc/daemons/reactionnerd.ini
-            W: alignak-all: executable-not-elf-or-script usr/alignak/etc/daemons/arbiterd.ini
+            W: alignak-all: init.d-script-not-marked-as-conffile etc/init.d/alignak-receiver
+            E: alignak-all: init.d-script-not-included-in-package etc/init.d/alignak-receiver
+            W: alignak-all: init.d-script-not-marked-as-conffile etc/init.d/alignak-arbiter
+            E: alignak-all: init.d-script-not-included-in-package etc/init.d/alignak-arbiter
+            W: alignak-all: init.d-script-not-marked-as-conffile etc/init.d/alignak-poller
+            E: alignak-all: init.d-script-not-included-in-package etc/init.d/alignak-poller
+            W: alignak-all: init.d-script-not-marked-as-conffile etc/init.d/alignak-reactionner
+            E: alignak-all: init.d-script-not-included-in-package etc/init.d/alignak-reactionner
+            W: alignak-all: init.d-script-not-marked-as-conffile etc/init.d/alignak
+            E: alignak-all: init.d-script-not-included-in-package etc/init.d/alignak
             W: alignak-all: executable-not-elf-or-script etc/alignak/daemons/receiverd.ini
-            W: alignak-all: executable-not-elf-or-script usr/alignak/etc/daemons/pollerd.ini
-            W: alignak-all: executable-not-elf-or-script usr/alignak/etc/alignak.cfg
-            W: alignak-all: executable-not-elf-or-script etc/alignak/daemons/pollerd.ini
             W: alignak-all: executable-not-elf-or-script usr/alignak/etc/daemons/schedulerd.ini
-            W: alignak-all: executable-not-elf-or-script etc/alignak/daemons/schedulerd.ini
-            W: alignak-all: executable-not-elf-or-script lib/systemd/system/alignak.ini
-            W: alignak-all: executable-not-elf-or-script usr/alignak/etc/alignak.ini
+            W: alignak-all: executable-not-elf-or-script etc/alignak/daemons/brokerd.ini
+            W: alignak-all: executable-not-elf-or-script etc/alignak/alignak.cfg
             W: alignak-all: executable-not-elf-or-script usr/alignak/etc/daemons/brokerd.ini
+            W: alignak-all: executable-not-elf-or-script etc/alignak/daemons/arbiterd.ini
+            W: alignak-all: executable-not-elf-or-script etc/alignak/alignak.ini
+            W: alignak-all: executable-not-elf-or-script etc/alignak/daemons/schedulerd.ini
+            W: alignak-all: executable-not-elf-or-script usr/alignak/etc/daemons/reactionnerd.ini
+            W: alignak-all: executable-not-elf-or-script usr/alignak/etc/daemons/pollerd.ini
+            W: alignak-all: executable-not-elf-or-script etc/alignak/daemons/reactionnerd.ini
+            W: alignak-all: executable-not-elf-or-script usr/alignak/etc/daemons/arbiterd.ini
+            W: alignak-all: executable-not-elf-or-script usr/alignak/etc/daemons/receiverd.ini
+            W: alignak-all: executable-not-elf-or-script usr/alignak/etc/alignak.cfg
+            W: alignak-all: executable-not-elf-or-script lib/systemd/system/alignak.ini
+            W: alignak-all: executable-not-elf-or-script etc/alignak/daemons/pollerd.ini
+            W: alignak-all: executable-not-elf-or-script usr/alignak/etc/alignak.ini
             W: alignak-all: maintainer-script-ignores-errors postinst
             W: alignak-all: systemd-service-file-refers-to-obsolete-target lib/systemd/system/alignak-arbiter.service syslog.target
             W: alignak-all: systemd-service-file-refers-to-obsolete-target lib/systemd/system/alignak-broker.service syslog.target
