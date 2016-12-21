@@ -10,6 +10,7 @@ systemd/* /lib/systemd/system/
 
 # alignak default configuration files
 etc/alignak.cfg /etc/alignak/
+etc/alignak.ini /etc/alignak/
 etc/arbiter/* /etc/alignak/arbiter
 etc/daemons/* /etc/alignak/daemons/
 etc/certs/* /etc/alignak/certs/
