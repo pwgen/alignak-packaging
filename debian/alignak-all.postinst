@@ -45,6 +45,13 @@ case "$1" in
 
         # SysV part
         if [ -f /etc/default/alignak ]; then
+            sed -e 's:ETC=.*:ETC=/etc/alignak:g' \
+                -e 's:VAR=.*:VAR=/var/lib/alignak:g' \
+                -e 's:BIN=.*:BIN=/usr/bin:g' \
+                -e 's:RUN=.*:RUN=/var/run/alignak:g' \
+                -e 's:LOG=.*:LOG=/var/log/alignak:g' \
+                -i /etc/default/alignak
+
             ## Ensure alignak starts automatically
             update-rc.d -f alignak-arbiter defaults > /dev/null
             update-rc.d -f alignak-scheduler defaults > /dev/null
@@ -63,6 +70,16 @@ case "$1" in
             systemctl enable alignak-reactionner > /dev/null || :
             systemctl enable alignak-receiver > /dev/null || :
         fi
+
+        for inifiles in /etc/alignak/daemons/*.ini; do
+            sed -e 's:workdir=.*:workdir=/var/run/alignak:g' \
+                -e 's:logdir=.*:logdir=/var/log/alignak:g' \
+                -e 's:etcdir=.*:etcdir=/etc/alignak:g' \
+                -e 's:#user=.*:user=alignak:g' \
+                -e 's:#group=.*:group=alignak:g' \
+                -i $inifiles
+        done
+
 
     ;;
 
