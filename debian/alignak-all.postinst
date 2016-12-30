@@ -76,6 +76,8 @@ case "$1" in
             sed -e 's:workdir=.*:workdir=/var/run/alignak:g' \
                 -e 's:logdir=.*:logdir=/var/log/alignak:g' \
                 -e 's:etcdir=.*:etcdir=/etc/alignak:g' \
+                -e 's:#user=.*:user=alignak:g' \
+                -e 's:#group=.*:group=alignak:g' \
                 -i $inifiles
         done
 
