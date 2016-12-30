@@ -71,6 +71,13 @@ case "$1" in
             systemctl enable alignak-receiver > /dev/null || :
         fi
 
+        # Alignak configuration paths.cfg
+        sed -e 's:$ETC$=.*:$ETC$=/etc/alignak:g' \
+            -e 's:$VAR$=.*:$VAR$=/var/lib/alignak:g' \
+            -e 's:$RUN$=.*:$RUN$=/var/run/alignak:g' \
+            -e 's:$LOG$=.*:$LOG$=/var/log/alignak:g' \
+            -i /etc/alignak/arbiter/resource.d/paths.cfg
+
         for inifiles in /etc/alignak/daemons/*.ini; do
             sed -e 's:workdir=.*:workdir=/var/run/alignak:g' \
                 -e 's:logdir=.*:logdir=/var/log/alignak:g' \
