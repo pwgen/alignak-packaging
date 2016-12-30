@@ -44,7 +44,7 @@ case "$1" in
         done
 
         # SysV part
-        if [ -f /etc/default/alignaksdf ]; then        
+        if [ -f /etc/default/alignak ]; then
             sed -e 's:ETC=.*:ETC=/etc/alignak:g' \
                 -e 's:VAR=.*:VAR=/var/lib/alignak:g' \
                 -e 's:BIN=.*:BIN=/usr/bin:g' \
@@ -71,6 +71,14 @@ case "$1" in
             systemctl enable alignak-reactionner > /dev/null || :
             systemctl enable alignak-receiver > /dev/null || :
         fi
+
+        for inifiles in /etc/alignak/daemons/*.ini; do
+            sed -e 's:workdir=.*:workdir=/var/run/alignak:g' \
+                -e 's:logdir=.*:logdir=/var/log/alignak:g' \
+                -e 's:etcdir=.*:etcdir=/etc/alignak:g' \
+                -i $inifiles
+        done
+
 
     ;;
 
